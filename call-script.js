@@ -1,13 +1,20 @@
 const phrases = [
-  "Customers name begins with V",
-  "Customer lives in Donegal",
-  "Customer says ‘I know it’s not your fault’",
-  "Customer says ‘Can I speak to a manager?’",
-  "Customer has an email address with ‘@ymail.com’",
-  "Customer gives last 3 digits instead of 6",
-  "Customer has high usage but says ‘Theres nothing being used’",
-  "Account has 2 account holders",
-  "Customer has the same name as one of the Supervisors"
+  "50 Evals in a week",
+  "Eval scored at 100%",
+  "1st to complete this week's evals",
+  "Auto-fail rate >18%",
+  "Bring in sweets for the team",
+  "Prank the team",
+  "Request a power token for an agent",
+  ":Leave feedback for an agent via the bot",
+  "Fewer than 3 pieces of DPA confirmed",
+  "Great de-escalation on a call/chat",
+  "FCR achieved",
+  "Followed correct hold procedure",
+  "Complete a training module",
+  "logging in QADBNOV/Quality Book complete for the week",
+  "NPS Categorisations complete",
+  "Achieve 0 QA disputes for the week",
 ];
 
 const board = document.getElementById("bingo-board");
