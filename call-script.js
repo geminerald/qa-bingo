@@ -37,19 +37,22 @@ function loadBoardFromLocalStorage() {
   return { savedBoard, savedMarkedSquares, savedCrnValues };
 }
 
-// Generate a new shuffled board with 9 random phrases and save it to localStorage
+// Generate a new shuffled board with 16 random phrases and save it to localStorage
 function generateNewBoard() {
   const shuffledPhrases = [...phrases].sort(() => Math.random() - 0.5); // Shuffle the array
-  const boardArray = shuffledPhrases.slice(0, 9); // Select the first 9 phrases
-  const markedSquares = Array(9).fill(false); // Initialize marked squares
-  const crnValues = Array(9).fill(null); // Initialize per-square CRN values
+  const boardArray = shuffledPhrases.slice(0, 16); // Select the first 16 phrases
+  const markedSquares = Array(16).fill(false); // Initialize marked squares
+  const crnValues = Array(16).fill(null); // Initialize per-square CRN values
   saveBoardToLocalStorage(boardArray, markedSquares, crnValues);
   return { boardArray, markedSquares, crnValues };
 }
 
-// Render the bingo board
+// Render the bingo board as a 4x4 grid
 function renderBoard(boardArray, markedSquares, crnValues) {
   board.innerHTML = '';
+  board.style.display = 'grid';
+  board.style.gridTemplateColumns = 'repeat(4, 1fr)';
+  board.style.gap = '8px';
   boardArray.forEach((phrase, idx) => {
     const square = document.createElement('div');
     square.classList.add('square');
@@ -107,7 +110,7 @@ function renderBoard(boardArray, markedSquares, crnValues) {
   });
 }
 
-// Check for Bingo (all 9 squares must be marked)
+// Check for Bingo (all 16 squares must be marked)
 function checkWin(boardArray, markedSquares, crnValues) {
   const allMarked = markedSquares.every(Boolean);
   if (allMarked) {
@@ -172,9 +175,9 @@ function initializeBoard() {
   const { savedBoard, savedMarkedSquares, savedCrnValues } = loadBoardFromLocalStorage();
   if (savedBoard && savedMarkedSquares) {
     // Ensure crnValues array exists and has correct length
-    const crnValues = Array.isArray(savedCrnValues) && savedCrnValues.length === 9
+    const crnValues = Array.isArray(savedCrnValues) && savedCrnValues.length === 16
       ? savedCrnValues
-      : Array(9).fill(null);
+      : Array(16).fill(null);
     renderBoard(savedBoard, savedMarkedSquares, crnValues);
   } else {
     const { boardArray, markedSquares, crnValues } = generateNewBoard();
