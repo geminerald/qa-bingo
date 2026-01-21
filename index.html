@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Call Bingo</title>
+  <link rel="stylesheet" href="call-styles.css">
+  <link rel="icon" href="image.jpg">
+</head>
+<body>
+  <div id="app">
+    <!-- Header with larger image and title -->
+    <div class="header">
+      <img src="image.jpg" alt="Rob's Image" class="header-image">
+      <div class="title-wrapper">
+        <h1>Call Bingo</h1>
+      </div>
+    </div>
+    
+    <p class="instructions">Mark off what happens on your calls as they happen. Get them all to win!</p>
+    <div class="bingo-board" id="bingo-board"></div>
+    <div class="buttons">
+      <button id="reset-btn">Reset Board</button>
+    </div>
+    </div>
+  
+  <!-- Winning Modal -->
+  <div class="modal hidden" id="win-modal">
+    <div class="modal-content">
+      <img src="image.jpg" alt="Winning Image" class="modal-image">
+      <h2>🎉 Bingo! You Win! 🎉</h2>
+      <p>Great job</p>
+      <button id="close-modal">Close</button>
+    </div>
+  </div>
+
+  <script src="call-script.js"></script>
+</body>
+</html>
